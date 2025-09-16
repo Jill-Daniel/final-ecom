@@ -8139,199 +8139,149 @@ h2 {
 
 
 
+/* ==========================================
+   RESPONSIVENESS FOR HOME PAGE
+========================================== */
 
-
-
-
-
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.container {
+/* 1. Make images responsive */
+.hero-right img,
+.collection-card img,
+.carousel img {
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  height: auto;
+  object-fit: cover;
 }
 
-/* HERO SECTION */
+/* 2. Hero section responsiveness */
 .hero-large {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 60px 0;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .hero-left {
   flex: 1;
-  min-width: 300px;
 }
 
-.hero-left .brand-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.hero-left .brand-subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  line-height: 1.6;
-  color: #555;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 12px 25px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.btn.primary {
-  background: #ff4500;
-  color: #fff;
-}
-
-.btn.primary:hover {
-  background: #e03e00;
-}
-
-.btn.outline {
-  background: transparent;
-  border: 2px solid #ff4500;
-  color: #ff4500;
-}
-
-.btn.outline:hover {
-  background: #ff4500;
-  color: #fff;
-}
-
-/* Hero Right - Carousel */
 .hero-right {
   flex: 1;
-  min-width: 300px;
 }
 
-/* COLLECTIONS GRID */
+/* Hero buttons wrapping */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Collections grid responsiveness */
 .collections-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin: 60px 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
-.collection-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.collection-card:hover {
-  transform: scale(1.03);
-}
-
-.collection-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
+/* Collection card overlay text */
 .collection-card .overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.45);
-  color: #fff;
   text-align: center;
-  transition: background 0.3s ease;
+  padding: 1rem;
 }
 
-.collection-card:hover .overlay {
-  background: rgba(0, 0, 0, 0.6);
-}
+/* ==========================================
+   MEDIA QUERIES
+========================================== */
 
-.collection-card .overlay h2 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-}
-
-.collection-card .overlay .btn.secondary {
-  background: #fff;
-  color: #ff4500;
-  padding: 8px 20px;
-  font-size: 0.9rem;
-  border-radius: 5px;
-}
-
-.collection-card .overlay .btn.secondary:hover {
-  background: #ff4500;
-  color: #fff;
-}
-
-/* RESPONSIVE MEDIA QUERIES */
-
-/* Tablets */
+/* Medium screens (tablets) */
 @media (max-width: 1024px) {
   .hero-large {
     flex-direction: column-reverse;
     text-align: center;
-    padding: 40px 0;
   }
 
-  .hero-left .brand-title {
-    font-size: 2.5rem;
+  .hero-left {
+    margin-top: 1rem;
   }
 
-  .hero-left .brand-subtitle {
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
+  .hero-large {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+
+  .hero-left p {
     font-size: 1rem;
   }
 
   .hero-buttons {
     justify-content: center;
   }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .hero-left .brand-title {
-    font-size: 2rem;
-  }
-
-  .hero-left .brand-subtitle {
-    font-size: 0.95rem;
-  }
 
   .collections-grid {
     grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
   .collection-card .overlay h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
-  .collection-card .overlay .btn.secondary {
-    padding: 6px 15px;
-    font-size: 0.85rem;
+  .collection-card .overlay .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
   }
 }
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .hero-left h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-left p {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons .btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .collection-card .overlay h2 {
+    font-size: 1rem;
+  }
+
+  .collection-card .overlay .btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.7rem;
+  }
+}
+
+/* Make carousel fully responsive */
+.carousel {
+  width: 100%;
+  max-width: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
+
+
