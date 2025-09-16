@@ -9884,3 +9884,13 @@ body, html {
 
 
 
+/* Adjust main content slightly below navbar */
+.container {
+  padding-top: 1.5cm; /* Moves the content up by about 1.5cm from before */
+  margin-top: 0;      /* Ensure no extra margin above */
+}
+
+/* Hero section adjustments for smooth layout */
+.hero-large {
+  margin-top: 0; /* Remove any extra spacing */
+}
