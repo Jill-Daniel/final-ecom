@@ -8458,3 +8458,148 @@ img {
 
 
 
+
+
+
+/* ==========================================
+   RESPONSIVENESS FOR HOME PAGE
+========================================== */
+
+/* 1. Make images responsive */
+.hero-right img,
+.collection-card img,
+.carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* 2. Hero section responsiveness */
+.hero-large {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-right {
+  flex: 1;
+}
+
+/* Hero buttons wrapping */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Collections grid responsiveness */
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Collection card overlay text */
+.collection-card .overlay {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ==========================================
+   MEDIA QUERIES
+========================================== */
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .hero-large {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-left {
+    margin-top: 1rem;
+  }
+
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
+  .hero-large {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+
+  .hero-left p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .collections-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .collection-card .overlay h2 {
+    font-size: 1.2rem;
+  }
+
+  .collection-card .overlay .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .hero-left h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-left p {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons .btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .collection-card .overlay h2 {
+    font-size: 1rem;
+  }
+
+  .collection-card .overlay .btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.7rem;
+  }
+}
+
+/* Make carousel fully responsive */
+.carousel {
+  width: 100%;
+  max-width: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
