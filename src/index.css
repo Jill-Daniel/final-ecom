@@ -9913,12 +9913,12 @@ main.container {
 /* Fully responsive */
 @media (max-width: 768px) {
   main.container {
-    padding-top: 35px;
+    padding-top: 45px;
   }
 }
 
 @media (max-width: 480px) {
   main.container {
-    padding-top: 35px;
+    padding-top: 45px;
   }
 }
