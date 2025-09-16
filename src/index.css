@@ -8554,16 +8554,22 @@ h2 {
 /* =========================
   Global Container
 ========================= */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  font-family: Arial, sans-serif;
+}
+
 main.container {
-  margin-top: 70px; /* navbar height */
-  padding: 0 1rem;
+  margin-top: 70px; /* height of navbar */
+  padding: 0 0.75rem;
   max-width: 1200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
 /* =========================
@@ -8574,24 +8580,25 @@ main.container {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  gap: 1.5rem;
   width: 100%;
+  gap: 1rem;
 }
 
-.hero-left {
-  flex: 1 1 320px;
-  max-width: 600px;
+.hero-left, .hero-right {
+  flex: 1 1 100%;
+  max-width: 100%;
+  text-align: center;
 }
 
 .hero-left h1.brand-title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2.2rem); /* scales dynamically */
   line-height: 1.2;
   margin-bottom: 0.5rem;
 }
 
 .hero-left p.brand-subtitle {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  line-height: 1.4;
   margin-bottom: 1rem;
 }
 
@@ -8599,12 +8606,7 @@ main.container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.75rem;
-}
-
-.hero-right {
-  flex: 1 1 320px;
-  max-width: 600px;
+  gap: 0.5rem;
 }
 
 /* =========================
@@ -8612,16 +8614,10 @@ main.container {
 ========================= */
 .collections-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
   width: 100%;
-  margin-bottom: 2.5rem;
-}
-
-.collection-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
+  margin-bottom: 2rem;
 }
 
 .collection-card img {
@@ -8630,24 +8626,12 @@ main.container {
   display: block;
 }
 
-.collection-card .overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem;
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  text-align: center;
-}
-
 .collection-card .overlay h2 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
 }
 
 .collection-card .overlay .btn {
-  font-size: 0.9rem;
+  font-size: clamp(0.75rem, 2.5vw, 0.95rem);
 }
 
 /* =========================
@@ -8656,7 +8640,7 @@ main.container {
 .footer {
   background-color: #111;
   color: #fff;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   text-align: center;
 }
 
@@ -8666,7 +8650,7 @@ main.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .footer-top,
@@ -8679,97 +8663,54 @@ main.container {
 }
 
 .footer-logo h2 {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
   margin: 0;
-}
-
-.footer-logo span {
-  color: #0070f3;
 }
 
 .footer-socials {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-socials a {
-  color: #fff;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-
-.footer-socials a:hover {
-  color: #0070f3;
+  font-size: clamp(0.9rem, 4vw, 1.2rem);
 }
 
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  gap: 0.5rem;
 }
 
 .footer-nav li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s;
-}
-
-.footer-nav li a:hover {
-  color: #0070f3;
+  font-size: clamp(0.8rem, 3.5vw, 1rem);
 }
 
 /* =========================
   Responsive Adjustments
 ========================= */
-@media (max-width: 768px) {
-  .hero-large {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-left h1.brand-title {
-    font-size: 1.8rem;
-  }
-
-  .hero-left p.brand-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-}
-
 @media (max-width: 480px) {
   .hero-left h1.brand-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
-
   .hero-left p.brand-subtitle {
     font-size: 0.9rem;
   }
-
   .collection-card .overlay h2 {
     font-size: 1rem;
   }
-
   .collection-card .overlay .btn {
     font-size: 0.8rem;
   }
-
   .footer-logo h2 {
     font-size: 1.2rem;
   }
-
   .footer-socials a {
     font-size: 1rem;
   }
-
   .footer-nav li a {
     font-size: 0.85rem;
   }
