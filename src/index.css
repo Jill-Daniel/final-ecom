@@ -8287,125 +8287,144 @@ h2 {
 
 
 
-/* --- Home Page Responsiveness --- */
+/* =========================
+  General Responsive Styles
+========================= */
 
-/* General container scaling */
-.container {
-  width: 100%;
-  padding: 0 1rem;
-  box-sizing: border-box;
+/* Make all images flexible */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Hero Section */
+/* Ensure links and buttons scale */
+.btn {
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+}
+
+/* Container should adapt to screen size */
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================
+  Hero Section
+========================= */
 .hero-large {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem 0;
+  margin-bottom: 2rem;
 }
 
 .hero-left {
   flex: 1 1 100%;
-  text-align: center;
+  order: 1;
+  z-index: 2;
+  padding: 1rem 0;
 }
 
-.hero-left h1.brand-title {
+.hero-left .brand-title {
   font-size: 2rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.hero-left p.brand-subtitle {
+.hero-left .brand-subtitle {
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.hero-buttons .btn {
-  width: 80%;
-  max-width: 250px;
-}
-
-/* Hero Right (Carousel) */
+/* Carousel slides */
 .hero-right {
   flex: 1 1 100%;
-  margin-top: 2rem;
+  order: 2;
+  margin-top: 1rem;
 }
 
-.hero-right img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Collections Grid */
+/* =========================
+  Collections Grid
+========================= */
 .collections-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
-  justify-content: center;
 }
 
 .collection-card {
-  flex: 1 1 100%;
-  max-width: 350px;
   position: relative;
+  overflow: hidden;
 }
 
-.collection-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Overlay text on images */
 .collection-card .overlay {
   position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.collection-card .overlay h2 {
-  font-size: 1.2rem;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
   color: #fff;
-  margin-bottom: 0.5rem;
+  text-align: center;
+  padding: 0.5rem 0;
 }
 
-.collection-card .overlay .btn {
-  font-size: 0.9rem;
-  padding: 0.5rem 1rem;
-}
-
-/* --- Media Queries for Responsiveness --- */
-
-/* Small Phones */
-@media (max-width: 480px) {
-  .hero-left h1.brand-title {
-    font-size: 1.6rem;
+/* =========================
+  Media Queries for Mobile
+========================= */
+@media (max-width: 768px) {
+  .hero-left .brand-title {
+    font-size: 1.8rem;
   }
 
-  .hero-left p.brand-subtitle {
+  .hero-left .brand-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .btn {
     font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Stack hero text first, then images */
+  .hero-large {
+    flex-direction: column;
   }
 
-  .hero-buttons {
+  .hero-left {
+    order: 1;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .hero-right {
+    order: 2;
+    margin-top: 1rem;
+  }
+
+  .hero-left .brand-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-left .brand-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .collections-grid {
+    grid-template-columns: 1fr;
     gap: 0.8rem;
-  }
-
-  .hero-buttons .btn {
-    width: 90%;
   }
 
   .collection-card .overlay h2 {
@@ -8413,68 +8432,26 @@ h2 {
   }
 
   .collection-card .overlay .btn {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     padding: 0.4rem 0.8rem;
   }
 }
 
-/* Medium Phones/Tablets */
-@media (min-width: 481px) and (max-width: 768px) {
-  .hero-large {
-    flex-direction: column;
-    text-align: center;
+/* =========================
+  Extra small devices
+========================= */
+@media (max-width: 360px) {
+  .hero-left .brand-title {
+    font-size: 1.3rem;
   }
 
-  .hero-left, .hero-right {
-    flex: 1 1 100%;
+  .hero-left .brand-subtitle {
+    font-size: 0.85rem;
   }
 
-  .hero-left h1.brand-title {
-    font-size: 1.8rem;
-  }
-
-  .hero-left p.brand-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-buttons {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero-buttons .btn {
-    width: auto;
-    margin: 0.2rem;
-  }
-
-  .collections-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .collection-card {
-    max-width: 90%;
-  }
-}
-
-/* Large Phones / Small Tablets */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .hero-large {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-left, .hero-right {
-    flex: 1 1 100%;
-  }
-
-  .hero-left h1.brand-title {
-    font-size: 2rem;
-  }
-
-  .hero-left p.brand-subtitle {
-    font-size: 1.1rem;
+  .btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.7rem;
   }
 }
 
