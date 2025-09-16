@@ -8552,14 +8552,18 @@ h2 {
 
 
 /* =========================
-  Global Container for Balance
+  Global Container
 ========================= */
 main.container {
-  margin-top: 80px; /* to account for fixed navbar */
-  padding: 1rem;
+  margin-top: 70px; /* navbar height */
+  padding: 0 1rem;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* =========================
@@ -8567,19 +8571,21 @@ main.container {
 ========================= */
 .hero-large {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .hero-left {
-  flex: 1 1 300px;
+  flex: 1 1 320px;
+  max-width: 600px;
 }
 
 .hero-left h1.brand-title {
   font-size: 2rem;
+  line-height: 1.2;
   margin-bottom: 0.5rem;
 }
 
@@ -8591,12 +8597,14 @@ main.container {
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
 .hero-right {
-  flex: 1 1 300px;
+  flex: 1 1 320px;
+  max-width: 600px;
 }
 
 /* =========================
@@ -8606,7 +8614,8 @@ main.container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
-  margin-bottom: 3rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
 }
 
 .collection-card {
@@ -8642,7 +8651,7 @@ main.container {
 }
 
 /* =========================
-  Footer Responsive & Centered
+  Footer
 ========================= */
 .footer {
   background-color: #111;
@@ -8654,29 +8663,37 @@ main.container {
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .footer-top,
 .footer-links,
 .footer-bottom {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footer-logo h2 {
   font-size: 1.5rem;
+  margin: 0;
 }
 
 .footer-logo span {
   color: #0070f3;
 }
 
+.footer-socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .footer-socials a {
   color: #fff;
-  margin: 0 0.5rem;
   font-size: 1.2rem;
   transition: color 0.3s;
 }
@@ -8687,9 +8704,9 @@ main.container {
 
 .footer-nav {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -8725,18 +8742,6 @@ main.container {
 
   .hero-buttons {
     justify-content: center;
-  }
-
-  .footer-top,
-  .footer-links,
-  .footer-bottom {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .footer-nav {
-    flex-direction: column;
-    gap: 0.5rem;
   }
 }
 
