@@ -9886,7 +9886,7 @@ body, html {
 
 /* Adjust main content slightly below navbar */
 .container {
-  padding-top: 1.5cm; /* Moves the content up by about 1.5cm from before */
+  padding-top: 1.9cm; /* Moves the content up by about 1.5cm from before */
   margin-top: 0;      /* Ensure no extra margin above */
 }
 
