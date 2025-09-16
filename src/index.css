@@ -8271,18 +8271,20 @@ h2 {
 
 
 /* =========================
-  Footer Responsiveness
+  Footer Responsiveness & Centered
 ========================= */
 
 .footer {
   background-color: #111;
   color: #fff;
   padding: 2rem 1rem;
+  text-align: center;
 }
 
 .footer-container {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center horizontally */
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -8290,14 +8292,14 @@ h2 {
 
 .footer-top {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Stack on mobile */
   align-items: center;
-  flex-wrap: wrap;
   gap: 1rem;
 }
 
 .footer-logo h2 {
   font-size: 1.5rem;
+  margin: 0;
 }
 
 .footer-logo span {
@@ -8307,6 +8309,7 @@ h2 {
 .footer-socials {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 
 .footer-socials a {
@@ -8320,8 +8323,7 @@ h2 {
 }
 
 .footer-links {
-  display: flex;
-  justify-content: center;
+  margin-top: 1rem;
 }
 
 .footer-nav {
@@ -8329,6 +8331,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  justify-content: center; /* Center links */
   padding: 0;
   margin: 0;
 }
@@ -8344,7 +8347,7 @@ h2 {
 }
 
 .footer-bottom {
-  text-align: center;
+  margin-top: 1.5rem;
   font-size: 0.9rem;
   color: #ccc;
 }
@@ -8353,20 +8356,6 @@ h2 {
   Responsive for Tablets & Mobile
 ========================= */
 @media (max-width: 1024px) {
-  .footer-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .footer-socials {
-    justify-content: flex-start;
-  }
-
-  .footer-links {
-    justify-content: flex-start;
-  }
-
   .footer-nav {
     gap: 1rem;
   }
@@ -8384,6 +8373,7 @@ h2 {
   .footer-nav {
     flex-direction: column;
     gap: 0.8rem;
+    font-size: 0.95rem;
   }
 }
 
