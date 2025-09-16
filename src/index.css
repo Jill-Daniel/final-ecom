@@ -9913,7 +9913,7 @@ main.container {
 /* Fully responsive */
 @media (max-width: 768px) {
   main.container {
-    padding-top: 45px;
+    padding-top: 50px;
   }
 }
 
