@@ -8715,3 +8715,294 @@ main.container {
     font-size: 0.85rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+  Global Styles
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+  Navbar
+========================= */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  flex-wrap: wrap;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.logo-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ff6600;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.menu-button {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-panel {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  margin-top: 0.5rem;
+}
+
+.nav-panel.show {
+  display: flex;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+.nav-cart {
+  position: relative;
+}
+
+.cart-indicator {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* =========================
+  Home / Hero Section
+========================= */
+.hero-large {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 70px; /* navbar height */
+  gap: 1rem;
+  padding: 0 0.75rem;
+}
+
+.hero-left h1.brand-title {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+}
+
+.hero-left p.brand-subtitle {
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  line-height: 1.4;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hero-right {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* =========================
+  Collections Grid
+========================= */
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.collection-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.collection-card .overlay h2 {
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+}
+
+.collection-card .overlay .btn {
+  font-size: clamp(0.75rem, 2.5vw, 0.95rem);
+}
+
+/* =========================
+  Footer
+========================= */
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-top, .footer-links, .footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-logo h2 {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-socials a {
+  font-size: clamp(0.9rem, 4vw, 1.2rem);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer-nav li a {
+  font-size: clamp(0.8rem, 3.5vw, 1rem);
+}
+
+/* =========================
+  Media Queries
+========================= */
+@media (min-width: 768px) {
+  .hero-large {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .hero-left, .hero-right {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .nav-panel {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+    background: transparent;
+    margin-top: 0;
+  }
+
+  .nav-list li a {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-left h1.brand-title {
+    font-size: 1.4rem;
+  }
+
+  .hero-left p.brand-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .collection-card .overlay h2 {
+    font-size: 1rem;
+  }
+
+  .collection-card .overlay .btn {
+    font-size: 0.8rem;
+  }
+
+  .footer-logo h2 {
+    font-size: 1.2rem;
+  }
+
+  .footer-socials a {
+    font-size: 1rem;
+  }
+
+  .footer-nav li a {
+    font-size: 0.85rem;
+  }
+}
