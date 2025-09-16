@@ -8541,3 +8541,231 @@ h2 {
     font-size: 0.8rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+/* =========================
+  Global Container for Balance
+========================= */
+main.container {
+  margin-top: 80px; /* to account for fixed navbar */
+  padding: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+  Hero Section
+========================= */
+.hero-large {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.hero-left {
+  flex: 1 1 300px;
+}
+
+.hero-left h1.brand-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-left p.brand-subtitle {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-right {
+  flex: 1 1 300px;
+}
+
+/* =========================
+  Collections Grid
+========================= */
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.collection-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.collection-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.collection-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  text-align: center;
+}
+
+.collection-card .overlay h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.collection-card .overlay .btn {
+  font-size: 0.9rem;
+}
+
+/* =========================
+  Footer Responsive & Centered
+========================= */
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top,
+.footer-links,
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo h2 {
+  font-size: 1.5rem;
+}
+
+.footer-logo span {
+  color: #0070f3;
+}
+
+.footer-socials a {
+  color: #fff;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+  color: #0070f3;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-nav li a:hover {
+  color: #0070f3;
+}
+
+/* =========================
+  Responsive Adjustments
+========================= */
+@media (max-width: 768px) {
+  .hero-large {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left h1.brand-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-left p.brand-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .footer-top,
+  .footer-links,
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-left h1.brand-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-left p.brand-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .collection-card .overlay h2 {
+    font-size: 1rem;
+  }
+
+  .collection-card .overlay .btn {
+    font-size: 0.8rem;
+  }
+
+  .footer-logo h2 {
+    font-size: 1.2rem;
+  }
+
+  .footer-socials a {
+    font-size: 1rem;
+  }
+
+  .footer-nav li a {
+    font-size: 0.85rem;
+  }
+}
